@@ -1,3 +1,6 @@
+import "./style/index.scss"
+
+
 import Utils from "./Utils"
 import {BubbleSort,SelectionSort} from "./Sort"
 
