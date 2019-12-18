@@ -2,4 +2,9 @@ $color-pink: #cc6699;
 
 #app {
     color: $color-pink;
+
+    .container {
+        width: 1000px;
+        margin: 0 auto;
+    }
 }

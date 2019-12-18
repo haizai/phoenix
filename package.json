@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "author": "haizai",
   "license": "ISC",
+  "scripts": {
+    "sort-dev": "cd sort && webpack-dev-server --open",
+    "sort-build": "cd sort && webpack"
+  },
   "dependencies": {
     "ts-loader": "^6.2.1",
     "webpack": "^4.41.3"
