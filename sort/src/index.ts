@@ -2,6 +2,7 @@ import Utils from "./Utils"
 import {BubbleSort,SelectionSort} from "./Sort"
 
 let globalThis:any = window
+
 globalThis.Utils = Utils
 
 globalThis.BubbleSort = BubbleSort

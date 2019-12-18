@@ -1,8 +1,4 @@
 let globalThis:any = window
-// globalThis.Utils = Utils
-
-// globalThis.BubbleSort = BubbleSort
-// globalThis.SelectionSort = SelectionSort
 const Utils = {
     // 获取随机数字数组
     getRandomNumArg(count:number = 20, min:number = 0,max:number = 100):number[] {
@@ -20,8 +16,5 @@ const Utils = {
         let colorNum = Utils.getRandomNum(0,0xffffff)
         return "0x" + colorNum.toString(16).toUpperCase().padStart(6,"0")
     },
-    exportToGlobal(...list) {
-        
-    }
 }
 export default Utils
