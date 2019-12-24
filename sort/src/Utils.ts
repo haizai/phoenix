@@ -1,4 +1,3 @@
-let globalThis:any = window
 const Utils = {
     // 获取随机数字数组
     getRandomNumArg(count:number = 20, min:number = 0,max:number = 100):number[] {

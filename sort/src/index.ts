@@ -3,24 +3,37 @@ import "./style/reset.css"
 
 
 import Utils from "./Utils"
-import {BubbleSort,SelectionSort} from "./Sort"
+import {SortType} from "./Sort"
+
+import Mission from "./Mission"
+import Global from "./Global"
 
 let globalThis:any = window
 
 globalThis.Utils = Utils
 
-globalThis.BubbleSort = BubbleSort
-globalThis.SelectionSort = SelectionSort
+globalThis.Mission = Mission
+
+import ActionEmitter from "./event/ActionEmitter"
+import CellBox from "./ui/CellBox"
+
+// const emitter = new ActionEmitter()
+Global.emitter = new ActionEmitter()
 
 
-function todo(fun) {
+
+const cellBox = new CellBox("#cellBox")
+
+function todo(fun:SortType) {
     let num = Utils.getRandomNumArg()
-    let g = fun(num)
-    for (let k of g) {
-        console.log(JSON.stringify(k),num.toString())
-    }
+    return new Mission(fun,num)
 }
 
+
+
+globalThis.SortType = SortType
 globalThis.todo = todo
+
+globalThis.a = todo(0)
 
 

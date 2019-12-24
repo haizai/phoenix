@@ -1,5 +1,12 @@
+enum ActionDefine {
+    Swap,
+    DoNothing,
+    Compare,
+    End,
+    Start,
+}
 interface IAction {
-    type:string,
+    type:ActionDefine,
     data?:any,
 }
 function Swap(nums:number[],a:number,b:number):IAction {
@@ -7,32 +14,33 @@ function Swap(nums:number[],a:number,b:number):IAction {
     nums[a] = nums[b]
     nums[b] = tem
     return {
-        type:"Swap",
+        type: ActionDefine.Swap,
         data: [a,b],
     }
 }
 function DoNothing(...indexs):IAction {
     return {
-        type:"DoNothing",
+        type: ActionDefine.DoNothing,
         data: indexs
     }
 }
 function Compare(nums:number[],a:number,b:number):IAction {
     return {
-        type:"Compare",
+        type: ActionDefine.Compare,
         data: [nums[a]>nums[b],a,b]
     }
 }
 function End(nums:number[]):IAction {
     return {
-        type:"End",
+        type: ActionDefine.End,
         data:nums
     }
 }
-function Start():IAction {
+function Start(nums:number[]):IAction {
     return {
-        type:"Start"
+        type: ActionDefine.Start,
+        data:nums
     }
 }
 
-export {Swap,DoNothing,End,Start,Compare}
+export {Swap,DoNothing,End,Start,Compare,IAction,ActionDefine}

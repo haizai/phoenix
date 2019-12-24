@@ -1,9 +1,9 @@
-import {Swap,DoNothing,Start,End,Compare} from "./Action"
+import {Swap,DoNothing,Start,End,Compare} from "./event/Action"
 
 
 // 冒泡
 function *BubbleSort(nums:number[]){
-    yield Start()
+    yield Start(nums)
     let comp
     for (let i = nums.length - 1; i >= 1 ; i--) {
         for (let j = 1; j <= i; j++) {
@@ -15,8 +15,9 @@ function *BubbleSort(nums:number[]){
     }
     yield End(nums)
 }
+// 选择
 function *SelectionSort(nums:number[]){
-    yield Start()
+    yield Start(nums)
     let comp, tem
     for (let i = 0; i <= nums.length-1; i++) {
         tem = i
@@ -31,6 +32,16 @@ function *SelectionSort(nums:number[]){
     yield End(nums)
 }
 
-
-export {BubbleSort,SelectionSort}
+enum SortType {
+    BubbleSort,
+    SelectionSort,
+}
+const Sorts = [
+    BubbleSort,
+    SelectionSort,
+]
+export {
+    SortType,
+    Sorts,
+}
 

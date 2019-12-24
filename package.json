@@ -8,10 +8,14 @@
     "sort-build": "cd sort && webpack"
   },
   "dependencies": {
+    "jQuery": "^1.7.4",
+    "jsdom": "^15.2.1",
     "ts-loader": "^6.2.1",
+    "typings": "^2.1.1",
     "webpack": "^4.41.3"
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.31",
     "css-loader": "^3.4.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
