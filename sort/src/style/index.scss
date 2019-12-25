@@ -1,16 +1,67 @@
 $color-pink: #cc6699;
 
-#container {
-    width: 1000px;
-    margin: 0 auto;
+body {
+  font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  background: #727f80;
+  color: #fff;
+  height: 100px;
+  line-height: 100px;
+}
+.info {
+  text-align: center;
+  font-size: 16px;
+  height: 70px;
+  line-height: 70px;
+  background: #f6f6f6;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.btn {
+  padding: 5px 30px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-left: 20px;
+}
+.btn:hover {
+  color: #f6f6f6;
+  background: #727f80;
+}
+#select {
+  padding: 3px 10px 3px 15px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+}
+.tip {
+  text-align: center;
+  margin: 20px;
+}
+code {
+  background: #727f80;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+  margin: 0 3px;
 }
 
 #cellBox {
     position: relative;
-
+    height: 600px;
     .cell {
         position: absolute;
         background: #aaa;
+        transition: left 0.2s;
 
         .num {
             position: absolute;

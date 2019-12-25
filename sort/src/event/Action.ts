@@ -4,6 +4,7 @@ enum ActionDefine {
     Compare,
     End,
     Start,
+    Clear,
 }
 interface IAction {
     type:ActionDefine,
@@ -42,5 +43,10 @@ function Start(nums:number[]):IAction {
         data:nums
     }
 }
+function Clear():IAction {
+    return {
+        type: ActionDefine.Clear,
+    }
+}
 
-export {Swap,DoNothing,End,Start,Compare,IAction,ActionDefine}
+export {Swap,DoNothing,End,Start,Compare,Clear,IAction,ActionDefine}

@@ -1,4 +1,5 @@
 node_modules
-sort/dist
+sort/dist/js
+sort/dist/bundle.js
 sort/yarn.lock
 yarn.lock

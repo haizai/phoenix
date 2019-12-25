@@ -15,5 +15,12 @@ const Utils = {
         let colorNum = Utils.getRandomNum(0,0xffffff)
         return "0x" + colorNum.toString(16).toUpperCase().padStart(6,"0")
     },
+    async wait(time:number) {
+        return new Promise(res=>{
+            setTimeout(()=>{
+                res()
+            },time)
+        })
+    }
 }
 export default Utils

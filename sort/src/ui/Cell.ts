@@ -29,4 +29,9 @@ export default class Cell {
         this.dom.removeClass("compare-max")
         this.dom.removeClass("compare-min")
     }
+    clear() {
+        this.index = null
+        this.num = null
+        this.compareEnd()
+    }
 }
