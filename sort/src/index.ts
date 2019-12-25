@@ -15,14 +15,12 @@ globalThis.Utils = Utils
 globalThis.Mission = Mission
 
 import ActionEmitter from "./event/ActionEmitter"
-import CellBox from "./ui/CellBox"
 
 // const emitter = new ActionEmitter()
 Global.emitter = new ActionEmitter()
 
 
 
-const cellBox = new CellBox("#cellBox")
 
 function todo(fun:SortType) {
     let num = Utils.getRandomNumArg()

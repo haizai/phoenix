@@ -1,9 +1,10 @@
 import {ActionDefine} from "../event/Action"
 import Global from "../Global"
+import Cell from "./Cell"
 
 export default class CellBox {
     private dom:JQuery
-    private cells: JQuery[] = []
+    private cells: Cell[] = []
     constructor(dom:string) {
         this.dom = $(dom)
         this.registerEvent()
@@ -17,24 +18,36 @@ export default class CellBox {
     private onStart(nums:number[]){
         for (let index in nums) {
             let num = nums[index]
-            let cell = $(`<div></div>`).addClass("cell").text(num).css({
-                height:num * 5 + "px",
-                width:"20px", 
-                left: (+index * 30) + "px",
-                top: (500 - num * 5) + "px",
-            })
+            let cell = new Cell(+index,num)
             this.cells.push(cell)
-            this.dom.append(cell)
+            this.dom.append(cell.dom)
+            cell.render()
         }
         console.log("onStart",nums)
     }
-    private onSwap(data){
-        console.log("onSwap",data)
+    private onSwap(data:[number,number]){
+        let [first,last] = data
+        let firstCell = this.getCell(first)
+        let lastCell = this.getCell(last)
+        firstCell.index = last
+        lastCell.index = first
+        firstCell.render()
+        lastCell.render()
     }
-    private onCompare(data){
-        console.log("onCompare",data)
+    private onCompare(data:[boolean,number,number]){
+        this.cells.forEach(i=>i.compareEnd())
+        let [isFirstMax,first,last] = data
+        this.getCell(first).compare(isFirstMax)
+        this.getCell(last).compare(!isFirstMax)
     }
     private omEnd(data){
-        console.log("omEnd",data)
+        this.cells.forEach(i=>i.compareEnd())
+    }
+    private getCell(index:number):Cell {
+        for (let cell of this.cells) {
+            if (cell.index == index) {
+                return cell
+            }
+        }
     }
 }

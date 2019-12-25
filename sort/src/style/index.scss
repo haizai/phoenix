@@ -11,5 +11,22 @@ $color-pink: #cc6699;
     .cell {
         position: absolute;
         background: #aaa;
+
+        .num {
+            position: absolute;
+            text-align: center;
+        }
+    }
+    .compare-min {
+        background: green;
+        .num {
+            color: green;
+        }
+    }
+    .compare-max {
+        background: red;
+        .num {
+            color: red;
+        }
     }
 }
