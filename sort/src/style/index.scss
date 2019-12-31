@@ -1,4 +1,6 @@
-$color-pink: #cc6699;
+$color-compare-min: green;
+$color-compare-max: red;
+$color-complete: blue;
 
 body {
   font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
@@ -69,15 +71,22 @@ code {
         }
     }
     .compare-min {
-        background: green;
+        background: $color-compare-min;
         .num {
-            color: green;
+            color: $color-compare-min;
         }
     }
     .compare-max {
-        background: red;
+        background: $color-compare-max;
         .num {
-            color: red;
+            color: $color-compare-max;
+        }
+    }
+
+    .complete {
+        background: $color-complete;
+        .num {
+            color: $color-complete;
         }
     }
 }

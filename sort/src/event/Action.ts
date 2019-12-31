@@ -5,6 +5,7 @@ enum ActionDefine {
     End,
     Start,
     Clear,
+    Complete,
 }
 interface IAction {
     type:ActionDefine,
@@ -17,6 +18,12 @@ function Swap(nums:number[],a:number,b:number):IAction {
     return {
         type: ActionDefine.Swap,
         data: [a,b],
+    }
+}
+function Complete(index:number):IAction {
+    return {
+        type: ActionDefine.Complete,
+        data: index
     }
 }
 function DoNothing(...indexs):IAction {
@@ -49,4 +56,7 @@ function Clear():IAction {
     }
 }
 
-export {Swap,DoNothing,End,Start,Compare,Clear,IAction,ActionDefine}
+export {
+    Swap,DoNothing,End,Start,Compare,Clear,Complete,
+    IAction,ActionDefine
+}

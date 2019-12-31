@@ -1,4 +1,4 @@
-import {Swap,DoNothing,Start,End,Compare} from "./event/Action"
+import {Swap,DoNothing,Start,End,Compare,Complete} from "./event/Action"
 
 
 // 冒泡
@@ -12,6 +12,7 @@ function *BubbleSort(nums:number[]){
                 yield Swap(nums,j,j-1)
             }
         }
+        yield Complete(i)
     }
     yield End(nums)
 }
@@ -28,6 +29,7 @@ function *SelectionSort(nums:number[]){
         if (tem != i) {
             yield Swap(nums,tem,i)
         }
+        yield Complete(i)
     }
     yield End(nums)
 }

@@ -15,6 +15,7 @@ export default class CellBox {
         Global.emitter.addListener(ActionDefine.Compare,this.onCompare.bind(this))
         Global.emitter.addListener(ActionDefine.End,this.omEnd.bind(this))
         Global.emitter.addListener(ActionDefine.Clear,this.onClear.bind(this))
+        Global.emitter.addListener(ActionDefine.Complete,this.onComplete.bind(this))
     }
     private onStart(nums:number[]){
         for (let index in nums) {
@@ -47,6 +48,9 @@ export default class CellBox {
     private onClear(data){
         this.dom.empty()
         this.cells = []
+    }
+    private onComplete(index:number){
+        this.getCell(index).complete()
     }
     private getCell(index:number):Cell {
         for (let cell of this.cells) {
